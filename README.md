@@ -44,7 +44,7 @@ fonts
 img
 
 #dentro resources>views:
-layouts > layouts.blade.php
+layouts > layout.blade.php
 partials > header.blade.php e footer.blade.php
 
 #dentro resources>scss:

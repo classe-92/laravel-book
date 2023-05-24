@@ -7,29 +7,68 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Laravel inizializzazione progetto
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+```bash
+#apriamo la cartella parent
+cd your parent_folder_path
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+#creiamo il progetto
+composer create-project --prefer-dist laravel/laravel:^9.2 your_project_name_here
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+#entriamo nella cartella del progetto da terminale di vscode
+cd your_project_name
 
-## Learning Laravel
+#apriamo la cartella in vscode
+code . -r 
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+#installiamo il pacchetto di inizializzazione ui con bootstrap
+composer require pacificdev/laravel_9_preset
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+#installiamo il pacchetto 
+php artisan preset:ui bootstrap
 
-## Laravel Sponsors
+#lanciamo npm install
+npm install
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+#installiamo fonawesome se serve
+npm install --save @fortawesome/fontawesome-free
+
+#modifichiamo vite.config.js per aggiungere alias fontawesome
+...
+ '~@fortawesome': path.resolve(__dirname, 'node_modules/@fortawesome'),
+...
+#creiamo le cartelle e i file necessari
+#dentro resources:
+fonts
+img
+
+#dentro resources>views:
+layouts > layouts.blade.php
+partials > header.blade.php e footer.blade.php
+
+#dentro resources>scss:
+partials
+(inseriamo dentro partials almeno un file _varaibles.scss) 
+
+#copiamo la cartella dei webfont di fontawesome dentro fonts
+
+#editiamo il file app.scss
+@use './partials/variables' as *;
+
+$fa-font-path: "../fonts/webfonts" !default;
+
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+
+@import "~bootstrap/scss/bootstrap";
+
+
+```
+
+
 
 ### Premium Partners
 
@@ -46,19 +85,5 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 - **[OP.GG](https://op.gg)**
 - **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
 - **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

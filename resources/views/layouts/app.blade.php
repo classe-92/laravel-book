@@ -16,11 +16,11 @@
 </head>
 
 <body>
-
-    <main class="bg-light">
+    @include('partials.header')
+    <main>
         @yield('content')
     </main>
-
+    @include('partials.footer')
 </body>
 
 </html>

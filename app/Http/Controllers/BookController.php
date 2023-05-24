@@ -9,8 +9,8 @@ class BookController extends Controller
 {
     public function index()
     {
-        //$books = Book::all();
-        $books = Book::where('id', '>', 2)->orderBy('title', 'asc')->limit(3)->get();
+        $books = Book::all();
+        //$books = Book::where('id', '>', 2)->orderBy('title', 'asc')->limit(3)->get();
         //dd($books);
         return view('books.index', compact('books'));
     }

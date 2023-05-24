@@ -16,7 +16,7 @@
                 </div>
             </div>
         </div>
-
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, provident!</p>
 
     </section>
 @endsection
